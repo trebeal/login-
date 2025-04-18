@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Facebook</title>
+  <link rel="stylesheet" href="assets/css/facebook-style.css">
+</head>
+<body>
+  <div class="registration-container">
+    <h1>Crea una cuenta</h1>
+    <p class="subtitle">Es rápido y fácil.</p>
+    
+    <form id="facebook-register-form">
+      <div class="name-fields">
+        <input type="text" id="first-name" placeholder="Nombre" required>
+        <input type="text" id="last-name" placeholder="Apellido" required>
+      </div>
+
+      <div class="birthday-field">
+        <label>Fecha de nacimiento</label>
+        <div class="birthday-selectors">
+          <select id="birth-day" required>
+            <option value="">15</option>
+            <!-- Días -->
+            <script>
+              for(let i = 1; i <= 31; i++) {
+                document.write(`<option value="${i}">${i}</option>`);
+              }
+            </script>
+          </select>
+          <select id="birth-month" required>
+            <option value="4">abr</option>
+            <!-- Meses -->
+            <script>
+              const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+              months.forEach((month, index) => {
+                document.write(`<option value="${index + 1}">${month}</option>`);
+              });
+            </script>
+          </select>
+          <select id="birth-year" required>
+            <option value="">2025</option>
+            <!-- Años -->
+            <script>
+              const currentYear = new Date().getFullYear();
+              for(let i = currentYear; i >= currentYear - 100; i--) {
+                document.write(`<option value="${i}">${i}</option>`);
+              }
+            </script>
+          </select>
+        </div>
+      </div>
+
+      <div class="gender-field">
+        <label>Género</label>
+        <div class="gender-options">
+          <label>
+            <input type="radio" name="gender" value="female" required>
+            <span>Mujer</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="male">
+            <span>Hombre</span>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="custom">
+            <span>Personalizado</span>
+          </label>
+        </div>
+      </div>
+
+      <input type="text" id="email-phone" placeholder="Número de celular o correo electrónico" required>
+      <input type="password" id="password" placeholder="Contraseña nueva" required>
+
+      <p class="disclaimer">
+        Es posible que las personas que usan nuestro servicio hayan subido tu información de contacto a Facebook. <a href="#">Más información</a>.
+      </p>
+
+      <p class="terms">
+        Al hacer clic en "Registrarte", aceptas nuestras <a href="#">Condiciones</a>, la <a href="#">Política de privacidad</a> y la <a href="#">Política de cookies</a>. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.
+      </p>
+
+      <button type="submit" class="register-btn">Registrarte</button>
+    </form>
+
+    <div class="login-link">
+      <a href="login.html">¿Ya tienes una cuenta?</a>
+    </div>
+  </div>
+
+  <script src="assets/js/"></script>
+</body>
+</html>
